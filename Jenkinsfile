@@ -3,5 +3,6 @@ node{
 	git 'https://github.com/SrijalKarmacharya/sqltest'
 	}
 	Stage('Compile-Package'){
+		echo hello
 	}
 }
