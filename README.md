@@ -1,7 +1,7 @@
 <<<<<<< HEAD
 # JavaMysqlExample
 
-This is an example project showing how to connect to MySQL in a Maven project.
+This is an example project showing how to connect to MySQL in a Maven project.Yes indeed.
 
 Build project.
 
