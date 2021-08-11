@@ -29,12 +29,12 @@ pipeline {
       steps {
         script {
           
-          docker.withRegistry( '', registryCredential ) {
+         
             sh '''
             echo $TAG_NAME
                        '''
               
-           }
+          
         }
       }
     }
