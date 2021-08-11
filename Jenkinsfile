@@ -1,11 +1,7 @@
 pipeline {
     agent any
     
-    environment {
-    registryCredential = 'docker_id'
-        
-  }
-    stages {
+     stages {
         stage('---clean---') {
             steps {
                 sh "mvn clean"
