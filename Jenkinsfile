@@ -1,11 +1,7 @@
 pipeline {
     agent any
     
-    environment {
-    registryCredential = 'docker_id'
-        
-  }
-    stages {
+     stages {
         stage('---clean---') {
             steps {
                 sh "mvn clean"
@@ -33,12 +29,12 @@ pipeline {
       steps {
         script {
           
-          docker.withRegistry( '', registryCredential ) {
+         
             sh '''
-            mvn package
-            '''
+            echo $TAG_NAME
+                       '''
               
-           }
+          
         }
       }
     }
