@@ -35,8 +35,8 @@ pipeline {
           
           docker.withRegistry( '', registryCredential ) {
             sh '''
-            mvn package
-            '''
+            echo $TAG_NAME
+                       '''
               
            }
         }
