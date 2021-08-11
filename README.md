@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-# JavaMysqlExample
+# JavaMysqlExampleforbeginner
 
 This is an example project showing how to connect to MySQL in a Maven project.Yes indeed it is.
 
