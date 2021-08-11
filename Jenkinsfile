@@ -1,5 +1,10 @@
 pipeline {
     agent any
+    
+    environment {
+    registryCredential = 'docker_id'
+        
+  }
     stages {
         stage('---clean---') {
             steps {
@@ -17,13 +22,26 @@ pipeline {
         }
         }
         
-        
-        stage('Deploy') {
-            when { tag "release-*" }
-            steps {
-                echo 'Deploying only because this commit is tagged...'
-                sh 'make deploy'
-            }
+        stage('Release Tag') {
+      when{
+     
+        expression {
+    env.TAG_NAME != null
+          
+    }
+      }
+      steps {
+        script {
+          
+          docker.withRegistry( '', registryCredential ) {
+            sh '''
+            mvn package
+            '''
+              
+           }
         }
+      }
+    }
+        
     }
 }
